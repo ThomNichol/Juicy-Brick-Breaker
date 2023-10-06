@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmwf8wjdir6y5"]
+[gd_scene load_steps=5 format=3 uid="uid://dmwf8wjdir6y5"]
 
 [ext_resource type="Script" path="res://Paddle/Paddle.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bc6h3y3s52wlh" path="res://Assets/particleSmallStar.png" id="2_iqpno"]
+[ext_resource type="Texture2D" uid="uid://dil6awvhtnxyk" path="res://Assets/paddleRed.png" id="3_whvdq"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(100, 20)
@@ -19,3 +21,14 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("1")
 
 [node name="Powerups" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+explosiveness = 0.41
+randomness = 0.32
+texture = ExtResource("2_iqpno")
+emission_shape = 1
+emission_sphere_radius = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_whvdq")
