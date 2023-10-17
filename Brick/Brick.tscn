@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjvdmnbj44w6x"]
 
 [ext_resource type="Script" path="res://Brick/Brick.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://c8ncql6woi0bx" path="res://Assets/bubble.png" id="2_se3l2"]
+[ext_resource type="Texture2D" uid="uid://2jl8nxh7c0vi" path="res://Assets/particleCartoonStar.png" id="2_0bovr"]
 [ext_resource type="Texture2D" uid="uid://bueli3thkvu2w" path="res://Assets/element_blue_rectangle.png" id="3_ypdsv"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -21,9 +21,11 @@ shape = SubResource("1")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 10
+amount = 20
 one_shot = true
-texture = ExtResource("2_se3l2")
+texture = ExtResource("2_0bovr")
+emission_shape = 1
+emission_sphere_radius = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_ypdsv")

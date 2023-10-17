@@ -1,6 +1,5 @@
 extends StaticBody2D
-
-
+	
 func _on_left_sensor_body_entered(_body):
 	pass # Replace with function body.
 

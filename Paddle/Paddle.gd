@@ -14,6 +14,8 @@ func _ready():
 func _physics_process(_delta):
 	target.x = clamp(target.x, width/2, Global.VP.x - width/2)
 	position = target
+	if $Highlight.modulate.a > 0:
+		$Highlight.modulate.a -= decay
 	for c in $Powerups.get_children():
 		c.payload()
 
@@ -22,7 +24,16 @@ func _input(event):
 		target.x += event.relative.x
 
 func hit(_ball):
-	pass
+	$Highlight.modulate.a = 1.0
+	$SmallStar.emitting = true
+	if tween:
+		tween.kill()
+	tween = create_tween().set_parallel(true)
+	$Images/Highlight.modulate.a = 1.0
+	tween.tween_property($Images/Highlight, "modulate:a", 0, time_highlight)
+	$Images/Highlight.scale = Vector2(1.5,1.5)
+	tween.tween_property($Images/Highlight, "scale", Vector2(1,1), time_highlight_size).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
+	
 
 func powerup(payload):
 	for c in $Powerups.get_children():
