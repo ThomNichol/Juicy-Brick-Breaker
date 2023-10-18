@@ -5,6 +5,9 @@ var speed = 10.0
 var width = 0
 var width_default = 0
 var decay = 0.02
+var tween
+var time_highlight = 1
+var time_highlight_size = Vector2(2,2)
 
 func _ready():
 	width = $CollisionShape2D.get_shape().size.x

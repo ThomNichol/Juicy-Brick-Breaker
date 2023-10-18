@@ -12,6 +12,11 @@ var wobble_max = 5
 var wobble_direction = Vector2.ZERO
 var decay_wobble = 0.15
 
+var time_highlight = 1
+var time_highlight_size = 1
+
+var distort_effect = 1
+
 var tween
 
 var released = true

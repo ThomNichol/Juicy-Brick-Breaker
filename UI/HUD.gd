@@ -3,6 +3,13 @@ extends Control
 var indicator_margin = Vector2(25, 25)
 var indicator_index = 25
 var Indicator = load("res://UI/Indicator.tscn")
+var indicator_scale = Vector2(1,1)
+var indicator_scale_start = Vector2(20,20)
+var indicator_scale_target = Vector2(20,20)
+var indicator_mod = 1
+var indicator_mod_start = 1
+var indicator_mod_target = 10
+var tween
 
 func _ready():
 	update_score()
