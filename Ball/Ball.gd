@@ -12,6 +12,8 @@ var wobble_max = 5
 var wobble_direction = Vector2.ZERO
 var decay_wobble = 0.15
 
+var h_rotate = 0
+
 var time_highlight = 1
 var time_highlight_size = 1
 
@@ -75,7 +77,7 @@ func _integrate_forces(state):
 		$Images/Highlight.modulate.a -= decay
 
 func change_size(s):
-	$ColorRect.scale = s
+	$Images.scale = s
 	$CollisionShape2D.scale = s
 
 func change_speed(s):
@@ -107,3 +109,4 @@ func comet():
 		sprite.modulate.s = 0.6
 		sprite.modulate.h = h_rotate
 		Comet_Container.add_child(sprite)
+		

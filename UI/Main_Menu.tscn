@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ei3ny6s8bla5"]
+[gd_scene load_steps=5 format=3 uid="uid://ei3ny6s8bla5"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1"]
 [ext_resource type="Theme" uid="uid://be4talavqa43k" path="res://UI/UI.tres" id="1_nf55f"]
 [ext_resource type="AudioStream" uid="uid://cgyy5v2a8ea2i" path="res://Assets/Wall.wav" id="3_h82kk"]
+[ext_resource type="PackedScene" uid="uid://dr50duubwf50c" path="res://Ball/ball.tscn" id="4_t1qwm"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -61,6 +62,9 @@ text = "Quit"
 
 [node name="Ball_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_h82kk")
+volume_db = -55.279
+
+[node name="Ball" parent="." instance=ExtResource("4_t1qwm")]
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
