@@ -7,7 +7,7 @@ var width_default = 0
 var decay = 0.02
 var tween
 var time_highlight = 1
-var time_highlight_size = Vector2(2,2)
+var time_highlight_size = 1
 
 func _ready():
 	width = $CollisionShape2D.get_shape().size.x
@@ -17,8 +17,8 @@ func _ready():
 func _physics_process(_delta):
 	target.x = clamp(target.x, width/2, Global.VP.x - width/2)
 	position = target
-	if $Highlight.modulate.a > 0:
-		$Highlight.modulate.a -= decay
+	if $Images/Highlight.modulate.a > 0:
+		$Images/Highlight.modulate.a -= decay
 	for c in $Powerups.get_children():
 		c.payload()
 
@@ -27,7 +27,9 @@ func _input(event):
 		target.x += event.relative.x
 
 func hit(_ball):
-	$Highlight.modulate.a = 1.0
+	var Paddle_Sound = get_node("/root/Game/Paddle_Sound")
+	Paddle_Sound.play
+	$Images/Highlight.modulate.a = 1.0
 	$SmallStar.emitting = true
 	if tween:
 		tween.kill()

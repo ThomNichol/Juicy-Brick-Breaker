@@ -28,7 +28,7 @@ emission_shape = 4
 emission_points = PackedVector2Array(5, 5, 10, 10, 15, 15, 20, 20, 25, 25, 20, 20, 15, 15, 10, 10, 5, 5, 0, 0)
 emission_colors = PackedColorArray()
 
-[node name="Images" type="Node" parent="."]
+[node name="Images" type="Node2D" parent="."]
 
 [node name="Ball" type="Sprite2D" parent="Images"]
 texture = ExtResource("3_i4ocq")

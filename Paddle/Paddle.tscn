@@ -33,7 +33,7 @@ initial_velocity_min = 100.0
 initial_velocity_max = 250.0
 angular_velocity_max = 800.0
 
-[node name="Images" type="Node" parent="."]
+[node name="Images" type="Node2D" parent="."]
 
 [node name="Highlight" type="Sprite2D" parent="Images"]
 position = Vector2(2, 0)

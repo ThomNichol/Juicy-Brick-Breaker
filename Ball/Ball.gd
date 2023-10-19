@@ -38,7 +38,7 @@ func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
 		body.hit(self)
 		accelerate = true	
-		$Highlight.modulate.a = 1.0
+		$Images/Highlight.modulate.a = 1.0
 	if tween:
 		tween.kill()
 	tween = create_tween().set_parallel(true)
@@ -71,8 +71,8 @@ func _integrate_forces(state):
 		state.linear_velocity.y = sign(state.linear_velocity.y) * min_speed * speed_multiplier
 	if state.linear_velocity.length() > max_speed * speed_multiplier:
 		state.linear_velocity = state.linear_velocity.normalized() * max_speed * speed_multiplier
-	if $Highlight.modulate.a > 0:
-		$Highlight.modulate.a -= decay
+	if $Images/Highlight.modulate.a > 0:
+		$Images/Highlight.modulate.a -= decay
 
 func change_size(s):
 	$ColorRect.scale = s
@@ -82,6 +82,8 @@ func change_speed(s):
 	speed_multiplier = s
 
 func die():
+	var die_sound = get_node("/root/Game/Die_Sound")
+	die_sound.play
 	queue_free()
 	
 func wobble():
@@ -95,3 +97,13 @@ func distort():
 	var direction = Vector2(1 + linear_velocity.length() * distort_effect, 1 - linear_velocity.length() * distort_effect)
 	$Images.rotation = linear_velocity.angle()
 	$Images.scale = direction
+	
+func comet():
+	h_rotate = wrapf(h_rotate+0.01, 0, 1)
+	var Comet_Container = get_node_or_null("/root/Game/Comet_Container")
+	if Comet_Container != null:
+		var sprite = $Images/Ball.duplicate()
+		sprite.global_position = global_position
+		sprite.modulate.s = 0.6
+		sprite.modulate.h = h_rotate
+		Comet_Container.add_child(sprite)
