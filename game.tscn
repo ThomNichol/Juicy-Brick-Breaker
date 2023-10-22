@@ -102,24 +102,24 @@ script = ExtResource("10_75sq7")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_i8e7k")
-volume_db = -61.252
+volume_db = 20.0
 autoplay = true
 
 [node name="Wall_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_7vn81")
-volume_db = -55.0
+volume_db = 8.0
 
 [node name="Paddle_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_6fbsk")
-volume_db = -55.0
+volume_db = 8.0
 
 [node name="Brick_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_pnq7n")
-volume_db = -55.0
+volume_db = 8.0
 
 [node name="Die_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_q3370")
-volume_db = -55.0
+volume_db = 8.0
 
 [node name="Comet_Container" type="Node2D" parent="."]
 script = ExtResource("16_tfyup")

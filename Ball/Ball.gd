@@ -85,7 +85,7 @@ func change_speed(s):
 
 func die():
 	var die_sound = get_node("/root/Game/Die_Sound")
-	die_sound.play
+	die_sound.play()
 	queue_free()
 	
 func wobble():

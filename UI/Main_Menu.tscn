@@ -62,7 +62,7 @@ text = "Quit"
 
 [node name="Ball_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_h82kk")
-volume_db = -55.279
+volume_db = 8.0
 
 [node name="Ball" parent="." instance=ExtResource("4_t1qwm")]
 
